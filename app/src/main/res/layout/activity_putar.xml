@@ -5,19 +5,24 @@
     android:orientation="vertical"
     android:weightSum="10"
     android:background="@drawable/bgplay"
+    android:id="@+id/bgputar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".putarActivity">
 
 
     <LinearLayout
+        android:id="@+id/rootview"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="center"
         android:layout_weight="7"
         android:orientation="vertical">
-        <ImageView
+
+        <com.github.siyamed.shapeimageview.CircularImageView
             android:layout_width="250dp"
+            app:siBorderWidth="20dp"
+            app:siBorderColor="#fff"
             android:layout_height="250dp"
             android:src="@drawable/putar"
 

@@ -16,6 +16,9 @@ import android.widget.TextView;
 import java.io.File;
 import java.util.ArrayList;
 
+import ir.mirrajabi.viewfilter.core.ViewFilter;
+import ir.mirrajabi.viewfilter.renderers.BlurRenderer;
+
 public class putarActivity extends AppCompatActivity {
 
 
@@ -36,6 +39,12 @@ public class putarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_putar);
+
+        ViewFilter.getInstance(this)
+                //Use blur effect or implement your custom IRenderer
+                .setRenderer(new BlurRenderer(16))
+                .applyFilterOnView(findViewById(R.id.bgputar),
+                        findViewById(R.id.rootview));
 
         btnNext=(Button)findViewById(R.id.next);
         btnPrev=(Button)findViewById(R.id.prev);
